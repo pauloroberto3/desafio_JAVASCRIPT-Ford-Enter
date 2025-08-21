@@ -71,8 +71,7 @@ div#compare {
     display: none;
     width: 50vw;
     max-width: 800px;
-    min-width: 400px;
-    height: 80vh;
+    min-width: 500px;
     max-height: 700px;
     min-height: 350px;
     background: #fff;
