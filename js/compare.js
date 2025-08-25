@@ -44,10 +44,25 @@ function SetCarToCompare(el, carClass) {
           const index = GetCarArrPosition(carArr, carClass);
           if (index !== -1) {
             carArr.splice(index, 1);
+            };
         };
-        }; 
+        botaoComparar();
     } else {
         throw "You need set a Car Class";
+    };
+};
+
+function botaoComparar() {
+    const compareBtm = document.querySelector('button[onclick="ShowCompare()"]');
+
+    if (carArr.length === 2) {
+        compareBtm.disabled = false;
+        compareBtm.style.opacity = 1;
+        compareBtm.style.cursor = "pointer"
+    } else {
+        compareBtm.disabled = true;
+        compareBtm.style.opacity = 0.5;
+        compareBtm.style.cursor = 'not-allowed';
     };
 };
 
@@ -59,14 +74,16 @@ function ShowCompare() {
 
     UpdateCompareTable();
     document.getElementById("compare").style.display = "block";
+    document.body.classList.add("compare-open");
 };
 
 function HideCompare(){
     document.getElementById("compare").style.display = "none"; 
+    document.body.classList.remove("compare-open");
 };
 
 function UpdateCompareTable() {
-    for(let i = 0; i <= 1; i++){
+    for(let i = 0; i < carArr.length; i++){
         let car = carArr[i];
         document.getElementById(`compare_image_${i}`).innerHTML = `<img src="${car.image}" style="max-width:200px">`;
         document.getElementById(`compare_modelo_${i}`).innerText = car.nome;
@@ -81,3 +98,7 @@ function UpdateCompareTable() {
         document.getElementById(`compare_preco_${i}`).innerText = `R$ ${car.preco.toLocaleString('pt-BR')}`;
     };
 };
+
+document.addEventListener('DOMContentLoaded', function(){
+    botaoComparar();
+});
