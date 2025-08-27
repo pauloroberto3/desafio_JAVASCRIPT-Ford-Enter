@@ -9,6 +9,12 @@
     padding: 5px;
 }
 
+textarea.fordform {
+    font-family: 'Roboto', sans-serif;
+    resize: vertical;
+    font-size: 14px;
+}
+
 select.fordform {
     width: 310px;
     height: 36px;
