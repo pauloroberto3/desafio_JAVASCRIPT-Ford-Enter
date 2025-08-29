@@ -35,7 +35,7 @@
             <div>
                 <img src="img/xls 2.2 diesel.jpg">
             </div>
-            <div>
+            <div class="forms-conteudo">
                 <h2 class="titulo">Sobre Você</h2>
             <form onsubmit="Post(this); return false;">
                 <input type="text" name="nome" placeholder="NOME*" class="fordform" id="nomeid" required>
@@ -48,7 +48,22 @@
                     <option>Solicitação</option>
                 </select>
                 <textarea name="mensagem" class="fordform" placeholder="DIGITE A SUA MENSAGEM AQUI..." required></textarea>
-            <button type="submit" id="enviarBtn">Enviar</button>
+                <div class="termos">
+                    <p>Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento será possível editar ou remover tais dados. 
+                        <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">Termos e Condições</a>
+                    </p>
+                </div>
+                
+                <div class="forms-checkbox">
+                    <input type="checkbox" id="termosCheckbox" onchange="validarEnvio()">
+                    <label for="termosCheckbox">Sim, li e concordo com os nossos termos.</label>
+                </div>
+                <div class="forms-checkbox">
+                    <input type="checkbox" id="newsletterCheckbox" onchange="validarEnvio()">
+                    <label for="newsletterCheckbox">Sim. Também quero receber descontos e novidades.</label>
+                </div>
+                
+                <button type="submit" id="enviarBtn">Enviar</button>
             </form>
             </div>
         </div>
@@ -63,7 +78,7 @@
             </ul>
         </nav>
         <div>
-           <img src="img/ford-96.png" width="70"  />
+           <img src="img/ford-96.png" width="70"/>
         </div>
     </footer>    
 </body>
